@@ -20,9 +20,9 @@ tr:nth-child(even) {
 </head>
 <body>
 
-<h2>Student-list</h2>
+<h2>Blogs-list</h2>
 <div style="margin-right:10%;float: right;">
-    <a href="{{url('add-student')}}">Add</a>
+    <a href="{{url('addpost')}}">Add</a>
 </div>
 <table>
   <tr>
@@ -31,7 +31,7 @@ tr:nth-child(even) {
     <th>Email</th>
     <th>Phone</th>
     <th>Address</th>
-    <th>Action</th>
+    <th colspan="3">ACTION</th>
   </tr>
 @foreach ($data as $i=> $blog)
       
@@ -42,7 +42,8 @@ tr:nth-child(even) {
     <td>{{ $blog->content }}</td>
     <td>{{ $blog->published_at }}</td>
     <td>{{ $blog->postcreated_at }}</td>
-    <td> <a href="{{url('edit-post/'.$blog->id)}}">edit</a> | <td> <a href="{{url('delete-post/'.$blog->id)}}">delete</a> </td>
+    <td> <a href="{{url('edit-post/'.$blog->id)}}">edit</a> <td> <a href="{{url('delete-post/'.$blog->id)}}">delete</a> </td><td> <a href="{{url('delete-post/'.$blog->id)}}">Show</a> </td>
+    
     
   </tr>
   
