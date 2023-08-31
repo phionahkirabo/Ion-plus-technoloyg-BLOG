@@ -1,3 +1,4 @@
+
 @extends('auth.dashbord')
 @section('content')
 <style>
@@ -20,7 +21,7 @@ tr:nth-child(even) {
 </head>
 <body>
 
-<h2>Blogs-list</h2>
+<h2>Details of single blog</h2>
 <div style="margin-right:10%;float: right;">
     <a href="{{url('addpost')}}">Add</a>
 </div>
@@ -31,23 +32,22 @@ tr:nth-child(even) {
     <th>Email</th>
     <th>Phone</th>
     <th>Address</th>
-    <th colspan="3">ACTION</th>
+    <!-- <th colspan="3">ACTION</th> -->
   </tr>
-@foreach ($data as $i=> $blog)
-      
-  
-  <tr>
-    <td>{{ $i+= 1}}</td>
-    <td>{{ $blog->title }}</td>
-    <td>{{ $blog->content }}</td>
-    <td>{{ $blog->published_at }}</td>
-    <td>{{ $blog->postcreated_at }}</td>
-    <td> <a href="{{url('edit-post/'.$blog->id)}}">edit</a> <td> <a href="{{url('delete-post/'.$blog->id)}}">delete</a> </td><td> <a href="{{url('show/'.$blog->id)}}">Show</a> </td>
-    
-    
-  </tr>
-  
-  @endforeach
+@foreach ($show as $i=> $blog)
+@if ($blog)
+    <tr>
+      <td>{{ ++$i }}</td>
+      <td>{{ $blog->title }}</td>
+      <td>{{ $blog->content }}</td>
+      <td>{{ $blog->published_at }}</td>
+      <td>{{ $blog->postcreated_at }}</td>
+    </tr>
+  @else
+    <tr>
+      <td colspan="5">No blog data available.</td>
+    </tr>
+  @endif
 </table>
 
 @endsection 

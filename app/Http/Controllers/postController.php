@@ -56,9 +56,15 @@ blogpost::where('id','=',$id)->update([
 ]);
 return redirect('/allblogs')->with('success','blog updated successfully');
 }
-public function deletepost($id){
+public function delete($id){
 blogpost::where('id','=',$id)->delete();
 return redirect('/allblogs')->with('success','blog deleted successfully');
+}
+public function show($id)
+{
+    $show= blogpost::findOrFail($id); // Assuming you have an "Item" model
+
+    return view('post.show', compact('show'));
 }
 }
 

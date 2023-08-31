@@ -26,4 +26,5 @@ Route::post('save-post',[postController::class,'savePost']);
 Route::get('edit-post/{id}',[postController::class,'editPost']);
 Route::post('update-post/{id}',[postController::class,'updatepost']);
 Route::get('delete-post/{id}',[postController::class,'delete']);
+Route::get('/show/{id}',[postController::class,'show']);
 
