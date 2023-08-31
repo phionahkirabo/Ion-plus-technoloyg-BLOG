@@ -27,13 +27,13 @@ tr:nth-child(even) {
 <table>
   <tr>
     <th>#</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>Address</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>published date</th>
+    <th>postcreated date</th>
     <th colspan="3">ACTION</th>
   </tr>
-@foreach ($data as $i=> $blog)
+@foreach ($datas as $i=> $blog)
       
   
   <tr>

@@ -8,9 +8,9 @@ class postController extends Controller
 {
     public function index(){
         //return view('student-list');
-        $data = blogpost::get();
+        $datas = blogpost::get();
         //return $data;
-        return view('post.allpost',compact('data'));
+        return view('post.allpost',compact('datas'));
     }
     public function addposts(){
   return view('post.addpost');
